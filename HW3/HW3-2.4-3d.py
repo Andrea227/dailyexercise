@@ -4,12 +4,9 @@ import math
 x = -0.5
 TOL = 10 ** (-5)
 N1 = 100
-f = lambda x: math.exp(6 * x) + 3 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - (math.log(8)) * (math.exp(4 * x)) - (
-        math.log(2) ** 3)
-f1 = lambda x: 6 * math.exp(6 * x) + 6 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - 4 * (math.log(8)) * (
-    math.exp(4 * x))
-f2 = lambda x: 36 * math.exp(6 * x) + 12 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - 16 * (math.log(8)) * (
-    math.exp(4 * x))
+f = lambda x: math.exp(6 * x) + 3 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - (math.log(8)) * (math.exp(4 * x)) - (math.log(2) ** 3)
+f1 = lambda x: 6 * math.exp(6 * x) + 6 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - 4 * (math.log(8)) * (math.exp(4 * x))
+f2 = lambda x: 36 * math.exp(6 * x) + 12 * ((math.log(2)) ** 2) * (math.exp(2 * x)) - 16 * (math.log(8)) * (math.exp(4 * x))
 
 
 # Newton's Method 1
