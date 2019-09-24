@@ -15,7 +15,7 @@ def newt1(fn, p3, TOL, N0):
     while i <= N0:
         p = p3 - fn(p3) / (derivative(fn, p3, dx=1e-6))
         if abs(p - p3) < TOL:
-            return print("p1 = %.6f for p0 = %d" % (p, a))
+            return print("p1 = %.6f for p0 = %d and iteration = %d" % (p, a, i))
             break
         else:
             p3 = p
@@ -31,7 +31,7 @@ def newt2(fn, fn2, p3, TOL, N0):
     while i <= N0:
         p = p3 - fn(p3) / fn2(p3)
         if abs(p - p3) < TOL:
-            return print("p2 = %.6f for p0 = %d" % (p, a))
+            return print("p2 = %.6f for p0 = %d and iteration = %d" % (p, a, i))
             break
         else:
             p3 = p
