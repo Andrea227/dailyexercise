@@ -72,7 +72,7 @@ def newt1(fn, p3, TOL, N0):
 def newt2(fn, fn2, p3, TOL, N0):
     i = 1
     while i <= N0:
-        p = p3 - fn(p3) / fn2(p3)
+        p = p3 - (fn(p3) / fn2(p3))
         if abs(p - p3) < TOL:
             return print("p = ", "%.9f" % p)
             break

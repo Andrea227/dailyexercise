@@ -24,7 +24,7 @@ def secanttest(fn, p0, p1, N0):
         p1 = p
         q1 = fn(p)
         i += 1
-    return print("secant result is: ", "%.6f" % result[10])
+    return result[10]
 
 
 # False Point Method
@@ -43,7 +43,7 @@ def failpotest(fn, p0, p1, N0):
         p1 = p
         q1 = q
         i += 1
-    return print("False point result is: ", "%.6f" % result[10])
+    return result[10]
 
 
 # Bisection Method
@@ -64,9 +64,17 @@ def bisectest(fn, p0, p1, N0):
             else:
                 p1 = p
         i += 1
-    return print("Bisection result is: ", "%.6f" % result[11])
+    return result[11]
 
 
-bisectest(f, p0, p1, maxi)
-failpotest(f, p0, p1, maxi)
-secanttest(f, p0, p1, maxi)
+a1 = bisectest(f, p0, p1, maxi)
+a2 = failpotest(f, p0, p1, maxi)
+a3 = secanttest(f, p0, p1, maxi)
+
+print(a1, a2, a3)
+
+f1 = f(a1)
+f2 = f(a2)
+f3 = f(a3)
+
+print(f1, f2, f3)
