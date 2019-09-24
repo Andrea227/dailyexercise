@@ -1,6 +1,5 @@
-import sys
 import math
-
+import sys
 
 # definition of the input
 p0 = float(eval(input("Enter p0: ")))
@@ -8,11 +7,12 @@ p1 = float(eval(input("Enter p1: ")))
 TOL = float(eval(input("Enter TOL: ")))
 maxi = float(input("Enter Iteration: "))
 
-
-f = lambda x: (x ** 3) - 2 * (x ** 2) - 5
-# f = lambda x: (x ** 3) + 3 * (x ** 2) - 1
-# f = lambda x: x - math.cos(x)
-# f = lambda x: x - 0.8 - 0.2 * math.sin(x)
+# f = lambda x: math.exp(x) + 2 ** (-x) + 2 * math.cos(x) - 6
+# f = lambda x: math.log(x-1) + math.cos(x-1)
+# f = lambda x: 2 * x * math.cos(2 * x) - ((x - 2) ** 2)
+# f = lambda x: ((x - 2) ** 2) - math.log(x)
+# f = lambda x: math.exp(x) - 3 * (x**2)
+f = lambda x: math.sin(x) - math.exp(-x)
 
 
 def failpo(fn, p0, p1, TOL, N0):

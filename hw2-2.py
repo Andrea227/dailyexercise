@@ -22,7 +22,7 @@ FA = y1(x1)
 while i <= N0:
     p = x1 + (x2 - x1) / 2
     FP = y1(p)
-    if FP == 0 or abs((x2 - x1) / 2) < TOL:
+    if FP == 0 or (x2 - x1) / 2 < TOL:
         print(p)
         sys.exit()
     # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
