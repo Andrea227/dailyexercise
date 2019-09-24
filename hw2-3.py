@@ -2,7 +2,7 @@ import sys
 import math
 
 p0 = 1 / 2
-TOL = 10 ** (-2)
+TOL = 10 ** (-4)
 N0 = 50
 
 
@@ -36,7 +36,7 @@ p1 = p0
 while i <= N0:
     p = y1(p1)
     if abs(p - p1) < TOL:
-        print("p1 =", "%.4f" % p)
+        print("p1 =", "%.6f" % p)
         break
     # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
     else:
@@ -53,7 +53,7 @@ while i <= N0:
     else:
         p = y2(p2)
         if abs(p - p2) < TOL:
-            print(print("p2 =", "%.4f" % p))
+            print(print("p2 =", "%.6f" % p))
             break
         # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
         else:
@@ -70,7 +70,7 @@ while i <= N0:
     else:
         p = y3(p3)
         if abs(p - p3) < TOL:
-            print(print("p3 =", "%.4f" % p))
+            print(print("p3 =", "%.6f" % p))
             break
         # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
         else:
@@ -83,7 +83,7 @@ p4 = p0
 while i <= N0:
     p = y4(p4)
     if abs(p - p4) < TOL:
-        print(print("p4 =", "%.4f" % p))
+        print(print("p4 =", "%.6f" % p))
         sys.exit()
     # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
     else:
