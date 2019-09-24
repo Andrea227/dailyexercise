@@ -1,10 +1,9 @@
-import numpy as np
-import matplotlib.pyplot as pt
+from scipy.misc import derivative
 
-x = np.arange(0, 360)
-y = np.sin(x * np.pi / 180.0)
-pt.plot(x, y)
-pt.xlim(0, 360)
-pt.ylim(-1.2, 1.2)
-pt.title("SIN function")
-pt.show()
+
+def f(x):
+    return x**5
+
+
+for x in range(1, 4):
+    print(derivative(f, x, dx=1e-6))
