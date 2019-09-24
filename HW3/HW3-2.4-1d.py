@@ -1,12 +1,11 @@
 from scipy.misc import derivative
-from math import cos
-from math import sin
+import math
 
-x = [-100, -50, -25, 25, 50, 100]
+x = -0.5
 TOL = 10 ** (-5)
 N1 = 100
-f = lambda x: x ** 2 - 10 * cos(x)
-f1 = lambda x: 2 * x + 10 * sin(x)
+f = lambda x: math.exp(6*x)+3*((math.log(2))**2)*(math.exp(2*x))-(math.log(8))*(math.exp(4*x))-(math.log(2)**3)
+f1 = lambda x: 6*math.exp(6*x)+6*((math.log(2))**2)*(math.exp(2*x))-4*(math.log(8))*(math.exp(4*x))
 
 
 # Newton's Method 1
@@ -22,7 +21,7 @@ def newt1(fn, p3, TOL, N0):
             p3 = p
         i += 1
     else:
-        return print("Newton's Method failed after N0 iterations, N0 = ", "%.4f" % maxi)
+        return print("Newton's Method failed after N0 iterations, N0 = ", "%.4f" % N0)
 
 
 # Newton's Method 2
@@ -38,9 +37,8 @@ def newt2(fn, fn2, p3, TOL, N0):
             p3 = p
         i += 1
     else:
-        return print("Newton's Method failed after N0 iterations, N0 = ", "%.4f" % maxi)
+        return print("Newton's Method failed after N0 iterations, N0 = ", "%.4f" % N0)
 
 
-for i in x:
-    newt1(f, i, TOL, N1)
-    newt2(f, f1, i, TOL, N1)
+newt1(f, x, TOL, N1)
+newt2(f, f1, x, TOL, N1)
