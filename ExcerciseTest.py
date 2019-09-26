@@ -1,11 +1,11 @@
 from scipy.misc import derivative
 
 
-x = 1.5
-TOL = 10 ** (-4)
-N1 = 100
-f = lambda x: x ** 2 - 2
-f1 = lambda x: 2 * x
+x = float(1.5)
+TOL = float(10 ** (-4))
+N1 = float(100)
+f = lambda x: x ** float(2) - float(2)
+f1 = lambda x: float(2) * x
 
 
 # Newton's Method 1

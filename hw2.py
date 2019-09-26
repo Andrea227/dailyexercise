@@ -2,7 +2,7 @@ import sys
 
 x1 = 0
 x2 = 1
-TOL = 10**(-2)
+TOL = 10**(-4)
 N0 = 100
 # illustrate all the input
 
@@ -15,15 +15,17 @@ def y1(a):
 i = 1
 FA = y1(x1)
 while i <= N0:
-    p = x1 + (x2 - x1)/2
+    p = (x1+x2)/2
     FP = y1(p)
-    if FP == 0 or (x2 - x1)/2 < TOL:
-        print(p)
+    if FP == 0:
+        print((p, i))
+        sys.exit()
+    elif (x2 - x1)/2 < TOL:
+        print((p, i))
         sys.exit()
     # If we find the root directly or the error is under tolerance, we output the outcome and exit the system
     elif FA*FP > 0:
         x1 = p
-        FA = FP
     else:
         x2 = p
     i += 1
