@@ -20,10 +20,12 @@ def secant(fn, p0, p1, TOL, maxi):
     i = 2
     q0 = fn(p0)
     q1 = fn(p1)
+    b = []
     while i <= maxi:
         p = p1 - q1 * (p1 - p0) / (q1 - q0)
+        b += [p]
         if abs(p - p1) < TOL:
-            return print("p =", "%.7f" % p)
+            return print("p = %s with iteration %d" % (b, i))
             sys.exit()
         else:
             p0 = p1
