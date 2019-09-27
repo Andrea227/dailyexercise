@@ -4,8 +4,8 @@ import sys
 # definition of the input
 p0 = float(eval(input("Enter p0: ")))
 p1 = float(eval(input("Enter p1: ")))
-TOL = float(eval(input("Enter TOL: ")))
-maxi = float(input("Enter Iteration: "))
+TOL = float(10**(-5))
+maxi = float(100)
 
 # f = lambda x: math.exp(x) + 2 ** (-x) + 2 * math.cos(x) - 6
 # f = lambda x: math.log(x-1) + math.cos(x-1)
@@ -19,10 +19,12 @@ def failpo(fn, p0, p1, TOL, N0):
     i = 2
     q0 = fn(p0)
     q1 = fn(p1)
+    b = []
     while i <= N0:
         p = p1 - q1 * (p1 - p0) / (q1 - q0)
+        b += [p]
         if abs(p - p1) < TOL:
-            return print("p = ", "%.8f" % p)
+            return print("p = %s with iteration %d" % (b, i))
             sys.exit()
         else:
             q = fn(p)
