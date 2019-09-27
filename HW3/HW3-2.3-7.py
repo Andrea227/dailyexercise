@@ -7,10 +7,10 @@ p1 = float(eval(input("Enter p1: ")))
 TOL = float(eval(input("Enter TOL: ")))
 maxi = float(input("Enter Iteration: "))
 
-f = lambda x: (x ** 3) - 2 * (x ** 2) - 5
+# f = lambda x: (x ** 3) - 2 * (x ** 2) - 5
 # f = lambda x: (x ** 3) + 3 * (x ** 2) - 1
 # f = lambda x: x - math.cos(x)
-# f = lambda x: x - 0.8 - 0.2 * math.sin(x)
+f = lambda x: x - 0.8 - 0.2 * math.sin(x)
 
 
 # secant algorithm
@@ -36,4 +36,3 @@ def secant(fn, p0, p1, TOL, maxi):
 
 
 secant(f, p0, p1, TOL, maxi)
-
