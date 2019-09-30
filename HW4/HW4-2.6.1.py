@@ -18,23 +18,40 @@ def horner(x):
     b = [y, z]
     return b
 
+def deflate(a, x):
+    n = len(a) - 1
+    b = [float(0)] * n
+    b[n - 1] = a[n]
+    for i in range(n - 2, -1, -1):
+        b[i] = float(a[i + 1]) + float(x) * float(b[i + 1])
+    return b
+
 def newt(p0, tol, N0):
-    i = 1
+    s = 1
     b = []
     a = p0
-    while i <= N0:
+    while s <= N0:
         result = [horner(p0)[0], horner(p0)[1]]
         p = p0 - (result[0] / result[1])
         b += [p]
         if abs(p - p0) < tol:
-            return print("With %d th iteration, Newton's method is %s with p0 = %.2f " % (i, str(b), a))
+            print("P are the following result with %d iterations and p0 = %d" % (i, a))
+            print(b)
+            return p
             break
         else:
             p0 = p
-        i += 1
+        s += 1
     else:
-        return print("Newton's Method failed after N0 iterations, N0 = ", "%.4f" % N0)
+        return "None"
 
+finalresult=[]
+for k in range(int(degree)):
+    u = newt(x0, Tolerance, Maxi)
+    if u == "None":
+        break
+    finalresult += [u]
+    poly = deflate(poly, u)
 
-newt(x0, Tolerance, Maxi)
+print("Zeros are %s" % str(finalresult))
 print("For p0 = %.2f , P(p0) = %.6f, P'(p0) = %.6f " % (x0, horner(x0)[0], horner(x0)[1]))
