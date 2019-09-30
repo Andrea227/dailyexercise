@@ -1,9 +1,9 @@
 f = lambda x: x ** (float(3)) - 2 * (x ** float(2)) - 5
-x0 = float(eval(input("Your approximation zero is: ")))
-x1 = float(eval(input("Your second approximation zero is: ")))
-x3 = float(eval(input("Your third approximation zero is: ")))
-Maxi = float(input("The maximum iteration is: "))
-Tolerance = float(eval(input("The tolerance is: ")))
+x0 = float(0)
+x1 = float(1)
+x2 = float(2)
+Maxi = float(50)
+Tolerance = float(10**(-4))
 
 def muller(p0, p1, p2, tol, N0):
     h1 = p1 - p0
@@ -36,3 +36,6 @@ def muller(p0, p1, p2, tol, N0):
             i += 1
     else:
         return print("Boo")
+
+
+muller(x0, x1, x2, Tolerance, Maxi)
