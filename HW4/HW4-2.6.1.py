@@ -8,15 +8,17 @@ x0 = float(eval(input("Your approximation zero is: ")))
 Maxi = float(input("The maximum iteration is: "))
 Tolerance = float(eval(input("The tolerance is: ")))
 
+
 def horner(x):
-    y = poly[len(poly)-1]
-    z = poly[len(poly)-1]
-    for j in range(len(poly)-2, 0, -1):
+    y = poly[len(poly) - 1]
+    z = poly[len(poly) - 1]
+    for j in range(len(poly) - 2, 0, -1):
         y = x * y + poly[j]
         z = x * z + y
     y = x * y + poly[0]
     b = [y, z]
     return b
+
 
 def deflate(a, x):
     n = len(a) - 1
@@ -25,6 +27,7 @@ def deflate(a, x):
     for i in range(n - 2, -1, -1):
         b[i] = float(a[i + 1]) + float(x) * float(b[i + 1])
     return b
+
 
 def newt(p0, tol, N0):
     s = 1
@@ -45,7 +48,8 @@ def newt(p0, tol, N0):
     else:
         return "None"
 
-finalresult=[]
+
+finalresult = []
 for k in range(int(degree)):
     u = newt(x0, Tolerance, Maxi)
     if u == "None":

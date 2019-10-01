@@ -1,9 +1,10 @@
 f = lambda x: x ** (float(3)) - 2 * (x ** float(2)) - 5
-x0 = float(eval(input("Your approximation zero is: ")))
-x1 = float(eval(input("Your second approximation zero is: ")))
-x2 = float(eval(input("Your third approximation zero is: ")))
-Maxi = float(input("The maximum iteration is: "))
-Tolerance = float(eval(input("The tolerance is: ")))
+x0 = float(0)
+x1 = float(1)
+x2 = float(2)
+Maxi = float(100)
+Tolerance = float(10 ** (-4))
+poly = [-5, 0, -2, 1]
 
 
 def muller(p0, p1, p2, tol, N0):
@@ -25,7 +26,7 @@ def muller(p0, p1, p2, tol, N0):
         p = p2 + h
         result += [p]
         if abs(h) < tol:
-            return print("The result is %s with %d th iteration" % (str(result), i))
+            return p
             break
         else:
             p0 = p1
@@ -38,7 +39,24 @@ def muller(p0, p1, p2, tol, N0):
             d = (g2 - g1) / (h2 + h1)
             i += 1
     else:
-        return print("No result after %d th iteration" % N0)
+        return "None"
 
 
-muller(x0, x1, x2, Tolerance, Maxi)
+def deflate(a, x):
+    n = len(a) - 1
+    b = [float(0)] * n
+    b[n - 1] = a[n]
+    for i in range(n - 2, -1, -1):
+        b[i] = float(a[i + 1]) + float(x) * float(b[i + 1])
+    return b
+
+
+finalresult = []
+for k in range(int(3)):
+    u = muller(x0, x1, x2, Tolerance, Maxi)
+    if u == "None":
+        break
+    finalresult += [u]
+    poly = deflate(poly, u)
+
+print("Zeros are %s" % str(finalresult))
