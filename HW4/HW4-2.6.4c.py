@@ -1,4 +1,4 @@
-f = lambda x: x ** (float(3)) - 2 * (x ** float(2)) - 5
+f = lambda x: (x ** (float(4))) + (x ** float(3)) + float(3) * x ** float(2) + float(2) * x + 2
 x0 = float(eval(input("Your approximation zero is: ")))
 x1 = float(eval(input("Your second approximation zero is: ")))
 x2 = float(eval(input("Your third approximation zero is: ")))
