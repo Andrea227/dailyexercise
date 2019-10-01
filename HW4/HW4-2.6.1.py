@@ -38,7 +38,7 @@ def newt(p0, tol, N0):
         p = p0 - (result[0] / result[1])
         b += [p]
         if abs(p - p0) < tol:
-            print("P are the following result with %d iterations and p0 = %d" % (i, a))
+            print("P are the following result with %d iterations and p0 = %d" % (s, a))
             print(b)
             return p
             break
