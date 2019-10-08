@@ -14,7 +14,7 @@ while b <= int(degree):
 max_x = round(opt.fminbound(lambda x: -cos(x), xlist[0], xlist[degree]), 2)
 print("The maximum of %d th derivative is %.2f " % (degree+1, max_x))
 
-error_bound = (cos(max_x))/(math.factorial(degree+1))
+error_bound = (-cos(max_x))/(math.factorial(degree+1))
 for a in xlist:
     error_bound *= (xp-a)
 
