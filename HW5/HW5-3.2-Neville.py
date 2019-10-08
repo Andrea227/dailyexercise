@@ -1,18 +1,20 @@
 import numpy as np
 import mathpy
+import math
 
 xp = eval(input("What's your approximation point: "))
 degree = int(input("How many data points do you have: "))
 
 xlist = np.zeros(degree)
 ylist = np.zeros(degree)
+f = lambda x: 3 ** x
 b = 0
 while b < int(degree):
     xlist[b] = eval(input("The next x is:"))
     b += 1
 a = 0
 while a < int(degree):
-    ylist[a] = eval(input("The next y is:"))
+    ylist[a] = f(xlist[a])
     a += 1
 
 
