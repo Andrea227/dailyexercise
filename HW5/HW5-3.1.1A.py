@@ -1,14 +1,14 @@
 from scipy.interpolate import lagrange
-from math import cos
+from math import exp, sin, pi
 
-xp = float(input("What's your approximation point: "))
+xp = float(eval(input("What's your approximation point: ")))
 degree = input("What's the degree of approximation poly?: ")
 xlist = [float(eval(input('The first x0 is: ')))]
 b = 1
 while b <= int(degree):
     xlist += [float(eval(input("The next x is:")))]
     b += 1
-f = lambda x: cos(x)
+f = lambda x: (exp(-2*x))*(sin(3*x))
 y = []
 for a in xlist:
     y += [f(a)]
@@ -18,8 +18,8 @@ acterror = abs(f(xp)-poly(xp))
 
 from numpy.polynomial.polynomial import Polynomial
 
-print("The coeffients are %s" % str(Polynomial(poly).coef))
+print("The coefficients are %s" % str(Polynomial(poly).coef))
 print("The final approximation formula is")
 print(poly)
-print("The approxiamation at %.4f is %.6f " % (xp, poly(xp)))
+print("The approximation at %.4f is %.6f " % (xp, poly(xp)))
 print("The actual error is %.6f " % acterror)
