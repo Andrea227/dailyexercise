@@ -1,5 +1,5 @@
 from scipy.interpolate import lagrange
-from math import exp, sin, pi
+from math import exp, sin, pi, log
 
 xp = float(eval(input("What's your approximation point: ")))
 degree = input("What's the degree of approximation poly?: ")
@@ -8,7 +8,7 @@ b = 1
 while b <= int(degree):
     xlist += [float(eval(input("The next x is:")))]
     b += 1
-f = lambda x: (exp(-2*x))*(sin(3*x))
+f = lambda x: log(x, 10)
 y = []
 for a in xlist:
     y += [f(a)]
