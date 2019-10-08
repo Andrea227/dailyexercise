@@ -8,13 +8,13 @@ b = 1
 while b <= int(degree):
     xlist += [float(eval(input("The next x is:")))]
     b += 1
-f = lambda x: log(x, 10)
+f = lambda x: exp(x) + exp(-x)
 y = []
 for a in xlist:
     y += [f(a)]
 poly = lagrange(xlist, y)
 
-acterror = abs(f(xp)-poly(xp))
+acterror = abs(f(xp) - poly(xp))
 
 from numpy.polynomial.polynomial import Polynomial
 
