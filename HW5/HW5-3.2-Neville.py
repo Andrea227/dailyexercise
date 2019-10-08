@@ -2,15 +2,17 @@ import numpy as np
 import mathpy
 import math
 
-xp = eval(input("What's your approximation point: "))
+xp = 1+math.sqrt(10)
 degree = int(input("How many data points do you have: "))
 
 xlist = np.zeros(degree)
 ylist = np.zeros(degree)
-f = lambda x: math.sqrt(x)
-b = 0
+h = 10/(degree-1)
+f = lambda x: (1+x**2)**(-1)
+xlist[0] = -5
+b = 1
 while b < int(degree):
-    xlist[b] = eval(input("The next x is:"))
+    xlist[b] = -5 + b*h
     b += 1
 a = 0
 while a < int(degree):
