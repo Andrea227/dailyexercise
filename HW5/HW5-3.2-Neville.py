@@ -7,7 +7,7 @@ degree = int(input("How many data points do you have: "))
 
 xlist = np.zeros(degree)
 ylist = np.zeros(degree)
-f = lambda x: 3 ** x
+f = lambda x: math.sqrt(x)
 b = 0
 while b < int(degree):
     xlist[b] = eval(input("The next x is:"))
