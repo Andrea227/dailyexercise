@@ -11,12 +11,12 @@ b = 1
 while b <= int(degree):
     xlist += [float(eval(input("The next x is:")))]
     b += 1
-max_x = opt.fminbound(lambda x: -abs(2/((x**3)*(log(10)))), xlist[0], xlist[degree])
-max_x1 = opt.fminbound(lambda x: -abs((x-3.0)*(x-3.2)*(x-3.5)), xlist[0], xlist[degree])
+max_x = opt.fminbound(lambda x: -abs(exp(x) - exp(-x)), xlist[0], xlist[degree])
+max_x1 = opt.fminbound(lambda x: -abs((x+0.3)*(x-0.0)*(x-0.3)), xlist[0], xlist[degree])
 
 print("The maximum of %d th derivative is %.2f " % (degree + 1, max_x))
 
-error_bound = (abs(2/((max_x**3)*(log(10))))) / (math.factorial(degree + 1))
+error_bound = (abs(exp(max_x) - exp(-max_x))) / (math.factorial(degree + 1))
 for a in xlist:
     error_bound *= (max_x1 - a)
 
