@@ -1,6 +1,4 @@
-# calculating u mentioned in the formula
 import numpy as np
-import scipy.special as sp
 
 n = int(input("how many data points do you have: "))
 xp = float(eval(input("Your evaluation point is: ")))
