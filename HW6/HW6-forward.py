@@ -22,16 +22,25 @@ h = (x1[-1] - x1[0]) / (n - 1)
 
 def combup(n, r):
     demo = n
-    for i in range(1, r):
-        demo *= (n - i)
-    return demo
+    i = 1
+    while i < r:
+        demo *= (n-i)
+        i += 1
+    else:
+        return demo
 
 
 def factor(x):
     a = 1
-    for i in range(2, x + 1):
-        a *= i
-    return a
+    if x!= 1:
+        i = 2
+        while i <= x:
+            a *= i
+            i += 1
+        else:
+            return a
+    else:
+        return a
 
 
 def forward(u):
