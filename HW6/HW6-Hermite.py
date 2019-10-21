@@ -1,3 +1,6 @@
+# This file is updated from the original algorithm I wrote for the question 3.4.1. The only difference is that for
+# every element in q, it gets round to 5 digits. And the precision of the final output is 5.
+
 import numpy as np
 
 num = int(input("how many data points do you have: "))
