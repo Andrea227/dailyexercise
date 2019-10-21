@@ -1,3 +1,4 @@
-z = [0]*5
-print(z)
+a=1.342167
 
+b = round(a, ndigits=5)
+print(b)

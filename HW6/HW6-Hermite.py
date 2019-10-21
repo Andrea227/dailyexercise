@@ -2,7 +2,6 @@ import numpy as np
 
 num = int(input("how many data points do you have: "))
 n = num - 1
-xp = float(eval(input("Your evaluation point is: ")))
 x1 = []
 y0 = []
 y1 = []
@@ -13,28 +12,29 @@ for j in range(num):
 for k in range(num):
     y1 += [float(input("Your corresponding y1 is: "))]
 
+
 z = [0]*(2*num)
 q = np.zeros((2*num, 2*num))
 i = 0
 while n >= i >= 0:
-    z[2*i] = x1[i]
-    z[2*i+1] = x1[i]
-    q[2*i+1][0] = y0[i]
-    q[2*i][0] = y0[i]
-    q[2*i+1][1] = y1[i]
+    z[2*i] = round(x1[i], ndigits=5)
+    z[2*i+1] = round(x1[i], ndigits=5)
+    q[2*i+1][0] = round(y0[i], ndigits=5)
+    q[2*i][0] = round(y0[i], ndigits=5)
+    q[2*i+1][1] = round(y1[i], ndigits=5)
     if i != 0:
-        q[2*i][1] = (q[2*i][0] - q[2*i-1][0])/(z[2*i] - z[2*i-1])
+        q[2*i][1] = round((q[2*i][0] - q[2*i-1][0])/(z[2*i] - z[2*i-1]), ndigits=5)
     i += 1
 
 k = 2
 while 2*n+1 >= k >= 2:
     j = 2
     while k >= j >= 2:
-        q[k][j] = (q[k][j-1] - q[k-1][j-1])/(z[k] - z[k-j])
+        q[k][j] = round((q[k][j-1] - q[k-1][j-1])/(z[k] - z[k-j]), ndigits=5)
         j += 1
     k += 1
 
-np.set_printoptions(precision=10, suppress=True)
+np.set_printoptions(precision=5, suppress=True, floatmode='fixed')
 print(x1)
 print(y0)
 print(y1)
