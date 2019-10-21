@@ -34,6 +34,7 @@ while 2*n+1 >= k >= 2:
         j += 1
     k += 1
 
+np.set_printoptions(precision=10, suppress=True)
 print(x1)
 print(y0)
 print(y1)
