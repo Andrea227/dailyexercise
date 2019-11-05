@@ -25,4 +25,4 @@ def richard3(x, f, h, n):
 np.set_printoptions(precision=4, suppress=True, floatmode='fixed')
 print("As the book example doing, we will use forward difference")
 print("The extrapolation table is")
-richard3(xp, f1, hp, n1)
+richard3(xp, f2, hp, n1)
