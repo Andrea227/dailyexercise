@@ -13,8 +13,8 @@ sumv = 0
 for i in range(n):
     a = (xrand[i] - 0.5) ** 2 + (zrand[i] - 0.5) ** 2
     b = (yrand[i] - 0.5) ** 2 + (zrand[i] - 0.5) ** 2
-    c = (xrand[i] - 0.5) ** 2 + (yrand[i] - 0.5) ** 2
-    if a < 0.25 and b < 0.25 and c < 0.25:
+    # c = (xrand[i] - 0.5) ** 2 + (yrand[i] - 0.5) ** 2
+    if a < 0.25 and b < 0.25: # and c < 0.25:
         sumv += 1
     else:
         pass
@@ -22,5 +22,5 @@ for i in range(n):
 # Calculate the monte carlo approximation of volume
 integral = sumv / n
 
-# print('Double  cylinder intersection is: ', integral)
-print('Triple cylinder intersection is: ', integral)
+print('Double  cylinder intersection is: ', integral)
+# print('Triple cylinder intersection is: ', integral)
