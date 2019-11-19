@@ -7,8 +7,13 @@ n5 = [[0.9061798459, 0.2369268850], [0.5384693101, 0.4786286705], [0.0000000000,
 x0 = float(eval(input("What's your a point?: ")))
 x1 = float(eval(input("What's your b point?: ")))
 num = int(input("How many integers do you have: ?"))
-f1 = lambda x: (x ** 2) * math.sin(x)
-# f1 = lambda x: (math.cos(x))**2
+f1 = lambda x: (x ** 2) * math.log(x)
+
+
+# f1 = lambda x: (x ** 2) * math.exp(-x)
+# f1 = lambda x: 2/((x**2)-4)
+# f1 = lambda x: (x ** 2) * math.sin(x)
+# f2 = lambda x: (math.cos(x))**2
 
 
 def gaus(a, b, n, f):
@@ -34,4 +39,3 @@ def gaus(a, b, n, f):
 
 ans = gaus(x0, x1, num, f1)
 print("The result is of Gaussian quadrature is %.8f" % ans)
-
