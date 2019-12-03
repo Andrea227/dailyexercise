@@ -11,7 +11,7 @@ answer[0][2] = ft(1)
 answer[0][3] = abs(answer[0][2] - answer[0][1])
 
 
-def midpoint():
+def heun():
     for i in range(1, 11):
         t1 = 1 + 0.1 * (i - 1)
         t2 = 1 + 0.1 * i
@@ -27,4 +27,4 @@ def midpoint():
 
 np.set_printoptions(suppress=True, floatmode='fixed')
 print("The following are: order, approximation, true value, and actual error")
-midpoint()
+heun()
