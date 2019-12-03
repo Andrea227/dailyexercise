@@ -16,4 +16,5 @@ def taylor():
         answer[i][1] = w + 0.1 * (f(t1, w) + (0.1 / 2) * df(t1, w))
     print(answer)
 
+
 taylor()
