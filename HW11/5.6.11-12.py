@@ -2,11 +2,11 @@ import numpy as np
 import math
 
 # input
-a = 1
-b = 2
+a = 0
+b = 1
 N = 10
 alpha = 1
-f = lambda t, y: (y / t) - ((y / t) ** 2)
+f = lambda t, y: -t*y + 4*(t/y)
 
 # start
 print("The following are approximations")
@@ -36,7 +36,7 @@ for i in range(3, N):
     print(t[i + 1], w[i + 1])
 
 # real value and error
-u1 = lambda t: t / (1 + math.log(t))
+u1 = lambda t: (4 - 3*math.exp(-t**2))**(1/2)
 real = [0] * (N + 1)
 print("This is real value")
 real[0] = alpha
