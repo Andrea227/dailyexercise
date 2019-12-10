@@ -17,7 +17,6 @@ alpha = [0, 1, 3]
 w = alpha
 print(t0, w)
 k = np.zeros((4, m))
-u1 = lambda t: -(t ** 2) + t * math.cos(math.log(t)) + t * math.sin(math.log(t)) + (t ** 3) * math.log(t)
 
 ###algorithm for approximation##
 t1 = a
