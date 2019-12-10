@@ -17,10 +17,11 @@ alpha = [0, 1, 3]
 w = alpha
 print(t0, w)
 k = np.zeros((4, m))
+u1 = lambda t: -(t ** 2) + t * math.cos(math.log(t)) + t * math.sin(math.log(t)) + (t ** 3) * math.log(t)
 
 ###algorithm for approximation##
 t1 = a
-print("Here's the approximation")
+print("Here's the approximation, real value and error")
 for i in range(0, N):
     for j in range(0, m):
         k[0][j] = h * f[j](t1, w[0], w[1], w[2])
@@ -33,4 +34,6 @@ for i in range(0, N):
     for j in range(0, m):
         w[j] = round(w[j] + (1 / 6) * (k[0][j] + 2 * k[1][j] + 2 * k[2][j] + k[3][j]), 8)
     t1 = round(a + (i + 1) * h, 1)
-    print(t1, w)
+    real = round(u1(t1), 8)
+    error = abs(w[0] - real)
+    print(t1, w, real, error)
