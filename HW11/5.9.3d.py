@@ -34,5 +34,4 @@ for i in range(0, N):
     for j in range(0, m):
         w[j] = round(w[j] + (1 / 6) * (k[0][j] + 2 * k[1][j] + 2 * k[2][j] + k[3][j]), 8)
     t1 = round(a + (i + 1) * h, 1)
-    real = u1(t1)
-    print(t1, w[0], real)
+    print(t1, w)
